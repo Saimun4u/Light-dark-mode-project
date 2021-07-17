@@ -56,3 +56,15 @@ function lightMode(){
 
 toggleBtn.addEventListener('change', switchTheme);
 
+//Check for current theme
+
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme){
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    if (currentTheme === 'dark'){
+        toggleIcon.checked = true;
+        darkMode();
+    }
+}
+
